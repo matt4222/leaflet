@@ -1,5 +1,14 @@
+import * as L from "leaflet";
+import "leaflet/dist/leaflet.css";
+
 import "../styles/index.css";
 
 const div_title = document.querySelector("#div_title");
 
-div_title.innerHTML = "Bonjour à tous !!!";
+div_title.innerHTML = "Bonjour à tous, les amis !!!";
+
+const map = L.map("div_map").setView([51.505, -0.09], 13);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
